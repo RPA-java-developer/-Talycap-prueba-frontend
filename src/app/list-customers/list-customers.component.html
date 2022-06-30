@@ -1,0 +1,26 @@
+<h2>Customer List</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Movil</th>
+            <th>Address</th>
+            <th>password</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let customer of customers">
+            <td>{{customer.customer_id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.movil}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.password}}</td>
+            <td>
+                botones
+            </td>
+    </tbody>    
+</table>

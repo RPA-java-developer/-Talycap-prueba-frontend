@@ -74,6 +74,9 @@
               "browserTarget": "logistics-frontend:build:development"
             }
           },
+          "options": {
+            "port": 4500
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
