@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-register-customer',
@@ -9,14 +11,28 @@ import { Customer } from '../customer';
 export class RegisterCustomerComponent implements OnInit {
 
   customer : Customer = new Customer();
-  constructor() { }
+  constructor(private customerService:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
     console.log("estoy en register customer");
   }
 
+  saveCustomer(){
+    this.customerService.registerCustomer(this.customer).subscribe(dato => {
+      console.log(dato);
+      this.goToCustomersList();
+    }, 
+    error => console.log(error));
+  }
+
+  goToCustomersList(){
+    this.router.navigate(['/customers']);
+  }
+
+
   onSubmit(){
-    console.log(this.customer);
+    //console.log(this.customer);
+    this.saveCustomer();
   }
 
 

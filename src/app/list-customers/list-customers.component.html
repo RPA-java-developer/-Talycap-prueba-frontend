@@ -7,7 +7,6 @@
             <th>Email</th>
             <th>Movil</th>
             <th>Address</th>
-            <th>password</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -18,9 +17,9 @@
             <td>{{customer.email}}</td>
             <td>{{customer.movil}}</td>
             <td>{{customer.address}}</td>
-            <td>{{customer.password}}</td>
             <td>
-                botones
+                <button (click)="actualizarEmpleado(customer.customer_id)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarEmpleado(customer.customer_id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
             </td>
     </tbody>    
 </table>

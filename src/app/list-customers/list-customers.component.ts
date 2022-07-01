@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
@@ -11,8 +12,8 @@ export class ListCustomersComponent implements OnInit {
 
   customers:Customer[];
   
-  constructor(private customerService:CustomerService) { }
-
+  constructor(private customerService:CustomerService, private router:Router) { }
+  
   ngOnInit(): void {
 
     /*
@@ -55,5 +56,16 @@ export class ListCustomersComponent implements OnInit {
     });
   }
   
+  actualizarEmpleado(id:number){
+    this.router.navigate(['update-customer',id]);
+  }
+
+  eliminarEmpleado(id:number){
+    console.log("voy por aqui en el componente LISTA... solo pulso el boton..");
+    this.customerService.eliminarEmpleado(id).subscribe((dato: any) => {
+      console.log(dato);
+      this.obtenerEmpleados();    
+    })
+  }
 
 }

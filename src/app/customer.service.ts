@@ -31,22 +31,19 @@ export class CustomerService {
     // This URL get genera el listado de todos los customer en el backeng
     private baseURL = "http://localhost:9090/api/v1/customers";
 
-
-    //caja_customer: Customer[];
-
     constructor(private httpClient : HttpClient) { }
 
-   
-  // Este metodo obtiene la lista de empleados 
+  // This method is used to get a list of all customers 
   getCustomerList():Observable<Customer[]> {
+    /*
     const caja_customer=  this.httpClient.get<Customer[]>(`${this.baseURL}`); 
     console.log("se imprime lo de la base");
     caja_customer.forEach(c => {
       console.log(c);
     });
-
     return caja_customer
-    //return this.httpClient.get<Customer[]>(`${this.baseURL}`); 
+    */
+    return this.httpClient.get<Customer[]>(`${this.baseURL}`); 
   }
 
   
@@ -85,5 +82,24 @@ export class CustomerService {
   }
   */
 
+    // This method registers a customer
+    registerCustomer(customer:Customer): Observable<Object> {
+      return this.httpClient.post(`${this.baseURL}`, customer);
+    }
+
+    // Este metodo busca un empleado por ID
+    obtenerEmpleadoPorId(id:number):Observable<Customer>{
+      return this.httpClient.get<Customer>(`${this.baseURL}/${id}`); 
+    }
+  
+    // Este metodo actualiza un empleado
+    actualizarEmpleado(id:number, customer:Customer):Observable<Object>{
+      return this.httpClient.put(`${this.baseURL}/${id}`, customer); 
+    }  
+  
+    // Este metodo elimina un empleado
+    eliminarEmpleado(id:number):Observable<Object>{
+      return this.httpClient.delete(`${this.baseURL}/${id}`); 
+    }     
   
 }

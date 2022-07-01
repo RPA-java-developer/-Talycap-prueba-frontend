@@ -7,12 +7,14 @@ import { ListCustomersComponent } from './list-customers/list-customers.componen
 import { HttpClientModule} from '@angular/common/http';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListCustomersComponent,
-    RegisterCustomerComponent
+    RegisterCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
