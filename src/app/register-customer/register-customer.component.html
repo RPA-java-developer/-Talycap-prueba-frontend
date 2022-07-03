@@ -7,11 +7,22 @@
             [(ngModel)] = "customer.customer_id"  name="customer_id"
             class="form-control"
             required
-            minlength="4"
+            minlength="6"
             maxlength="10"
-            placeholder="Type the customer_id"
-            #nombre = "ngModel">        
-        </div> 
+            placeholder="Type the customer ID"
+            #customer_id = "ngModel">        
+        </div>  
+        <div class="alert alert-danger" *ngIf="customer_id.invalid && (customer_id.dirty || customer_id.touched)" >
+            <div *ngIf="customer_id.errors?.['required']">
+                Type a customer ID
+            </div>    
+            <div *ngIf="customer_id.errors?.['minlength']">
+                The ID must be at least 6 numbers
+            </div> 
+            <div *ngIf="customer_id.errors?.['maxlength']">
+                The ID must be a maximum of 10 numbers
+            </div>                                 
+        </div>              
         <div class="form-group"> 
             <label>Name:</label>
             <input type="text" class="form-control" id="name" 
@@ -21,8 +32,19 @@
             minlength="4"
             maxlength="10"
             placeholder="Type the name"
-            #nombre = "ngModel">        
+            #name = "ngModel">        
         </div>
+        <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)" >
+            <div *ngIf="name.errors?.['required']">
+                Type a name
+            </div>    
+            <div *ngIf="name.errors?.['minlength']">
+                The name must be at least 4 characters
+            </div> 
+            <div *ngIf="name.errors?.['maxlength']">
+                The name must be a maximum of 10 characters
+            </div>                                 
+        </div>      
         <div class="form-group"> 
             <label>Email:</label>
             <input type="text" class="form-control" id="email" 
@@ -32,28 +54,58 @@
             placeholder="Type the email"
             #email = "ngModel">    
         </div> 
+        <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']">
+                Type an email
+            </div>
+            <div *ngIf="email.errors?.['pattern']">
+                Type the emial with the following format: user@correo.com
+            </div>
+        </div>        
         <div class="form-group"> 
             <label>Movil:</label>
             <input type="text" class="form-control" id="movil" 
             [(ngModel)] = "customer.movil"  name="movil"
             class="form-control"
             required
-            minlength="4"
-            maxlength="10"
+            minlength="10"
+            maxlength="15"
             placeholder="Type the movil"
-            #nombre = "ngModel">        
-        </div>    
+            #movil = "ngModel">        
+        </div>  
+        <div class="alert alert-danger" *ngIf="movil.invalid && (movil.dirty || movil.touched)" >
+            <div *ngIf="movil.errors?.['required']">
+                Type a movil number
+            </div>    
+            <div *ngIf="movil.errors?.['minlength']">
+                The movil must be at least 10 numbers
+            </div> 
+            <div *ngIf="movil.errors?.['maxlength']">
+                The movil must be a maximum of 14 numbers
+            </div>                                 
+        </div>            
         <div class="form-group"> 
             <label>Address:</label>
             <input type="text" class="form-control" id="address" 
             [(ngModel)] = "customer.address"  name="address"
             class="form-control"
             required
-            minlength="10"
+            minlength="20"
             maxlength="100"
             placeholder="Type the address"
-            #nombre = "ngModel">        
+            #address = "ngModel">        
         </div>
+        <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)" >
+            <div *ngIf="address.errors?.['required']">
+                Type a address
+            </div>    
+            <div *ngIf="address.errors?.['minlength']">
+                The address must be at least 20 characters
+            </div> 
+            <div *ngIf="address.errors?.['maxlength']">
+                The address must be a maximum of 100 characters
+            </div>                                 
+        </div>         
 
     <button class="btn btn-success" [disabled]="!customerForm .form.valid">Save</button>
     </form>   
