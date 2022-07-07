@@ -36,7 +36,7 @@ export class CustomerService {
   // This method is used to get a list of all customers 
   getCustomerList():Observable<Customer[]> {
     /*
-    const caja_customer=  this.httpClient.get<Customer[]>(`${this.baseURL}`); 
+    const caja_customer = this.httpClient.get<Customer[]>(`${this.baseURL}`); 
     console.log("se imprime lo de la base");
     caja_customer.forEach(c => {
       console.log(c);
@@ -101,5 +101,13 @@ export class CustomerService {
     obtenerEmpleadoPorId(id:number):Observable<Customer>{
       return this.httpClient.get<Customer>(`${this.baseURL}/${id}`); 
     }    
+  
+    getAll():Observable<Customer[]> {
+    //getAll(): any {
+      //getCustomerList():Observable<Customer[]> {
+
+        return this.httpClient.get<Customer[]>(`${this.baseURL}`); 
+
+    }
   
 }

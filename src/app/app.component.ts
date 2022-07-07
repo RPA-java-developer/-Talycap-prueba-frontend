@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Customer Management';
+  imageSrc = 'assets/imagenes/logoT.jpg';
+  title = 'Empresa de Transportes Rodrigo';
 }

@@ -13,6 +13,66 @@
     <label><b>Movil: </b>{{ customer.movil }}</label>
   </div>
   <div>
-    <label><b>Address: </b>{{ customer.address }}</label>
+    <label><b>Address: </b>{{ customer.address }}</label>    
   </div>
+  <div>
+    <label><b>Ground Logistics shipping: </b></label>
+    <table  border="1" *ngFor="let elemento of lg">
+      <tr >
+        <td>|---------------- Envio -------------------|</td>
+      </tr>      
+      <tr >
+        <td>
+        <label><b>ID: </b>{{ elemento.id }}</label> 
+        </td>
+      </tr>
+      <tr >
+        <td>
+        <label><b>Bodega de Entrega: </b>{{ elemento.codigo_bodegaEntrega }}</label> 
+        </td>
+      </tr> 
+      <tr >
+        <td>
+        <label><b>Tipo de Producto: </b>{{ elemento.tipoProducto}}</label> 
+        </td>
+      </tr>
+      <tr >
+        <td>
+        <label><b>Cantidad de Producto: </b>{{ elemento.cantidadProducto }}</label> 
+        </td>
+      </tr>   
+      <tr>
+        <td>
+        <label><b>Precio de Envio: </b>{{ elemento.precioEnvio }}</label> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <label><b>Descuento: </b>{{ elemento.descuento }}</label> 
+        </td>
+      </tr>   
+      <tr>
+        <td>
+        <label><b>Placa Vehiculo: </b>{{ elemento.placaVehiculo }}</label> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <label><b>Numero de Guía: </b>{{ elemento.numeroGuia }}</label> 
+        </td>
+      </tr>   
+      <tr>
+        <td>
+        <label><b>Fecha de Registro: </b>{{ elemento.fechaRegistro }}</label> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <label><b>Fecha de Entrega: </b>{{ elemento.fechaEntrega }}</label> 
+        </td>
+      </tr>       
+    </table>   
+  </div>
+
+
 </div>

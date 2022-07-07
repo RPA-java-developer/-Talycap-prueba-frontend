@@ -29,11 +29,8 @@ export class RegisterCustomerComponent implements OnInit {
     this.router.navigate(['/customers']);
   }
 
-
   onSubmit(){
-    //console.log(this.customer);
     this.saveCustomer();
   }
-
 
 }

@@ -1,0 +1,83 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Actualizar el Envio</h3>
+    <form (ngSubmit)= "onSubmit()" #actualizaEnvioForm = "ngForm">        
+        <div class="form-group"> 
+            <label>Bodega de Entrega:</label>
+            <input type="text" class="form-control" id="codigo_bodegaEntrega" 
+            [(ngModel)] = "gl_envio.codigo_bodegaEntrega"  name="codigo_bodegaEntrega"
+            class="form-control"
+            required
+            minlength="2"
+            maxlength="10"
+            placeholder="Type the name"
+            #codigo_bodegaEntrega = "ngModel">        
+        </div> 
+        <div class="form-group"> 
+            <label>Tipo de Producto:</label>
+            <input type="text" class="form-control" id="tipoProducto" 
+            [(ngModel)] = "gl_envio.tipoProducto"  name="tipoProducto"
+            class="form-control"
+            required
+            minlength="2"
+            maxlength="10"
+            placeholder="Type the name"
+            #tipoProducto = "ngModel">        
+        </div>                       
+        <div class="form-group"> 
+            <label>Cantidad de Producto:</label>
+            <input type="text" class="form-control" id="cantidadProducto" 
+            [(ngModel)] = "gl_envio.cantidadProducto"  name="cantidadProducto"
+            class="form-control"
+            required
+            minlength="1"
+            maxlength="10"
+            placeholder="Type the name"
+            #cantidadProducto = "ngModel">        
+        </div>       
+        <div class="form-group"> 
+            <label>Precio de Envio:</label>
+            <input type="text" class="form-control" id="precioEnvio" 
+            [(ngModel)] = "gl_envio.precioEnvio"  name="precioEnvio"
+            class="form-control"
+            required
+            minlength="2"
+            maxlength="10"
+            placeholder="Type the name"
+            #precioEnvio = "ngModel">        
+        </div>                       
+        <div class="form-group"> 
+            <label>descuento:</label>
+            <input type="text" class="form-control" id="descuento" 
+            [(ngModel)] = "gl_envio.descuento"  name="descuento"
+            class="form-control"
+            required
+            minlength="1"
+            maxlength="10"
+            placeholder="Type the name"
+            #descuento = "ngModel">        
+        </div>         
+        <div class="form-group"> 
+            <label>Placa Vehiculo:</label>
+            <input type="text" class="form-control" id="placaVehiculo" 
+            [(ngModel)] = "gl_envio.placaVehiculo"  name="placaVehiculo"
+            class="form-control"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Type the name"
+            #placaVehiculo = "ngModel">        
+        </div>                       
+        <div class="form-group"> 
+            <label>Numero Guia:</label>
+            <input type="text" class="form-control" id="numeroGuia" 
+            [(ngModel)] = "gl_envio.numeroGuia"  name="numeroGuia"
+            class="form-control"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Type the name"
+            #numeroGuia = "ngModel">        
+        </div>             
+        <button class="btn btn-success" [disabled]="!actualizaEnvioForm.form.valid">Guardar</button>
+    </form>
+</div>

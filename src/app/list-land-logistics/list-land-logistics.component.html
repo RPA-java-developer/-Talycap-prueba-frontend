@@ -1,0 +1,37 @@
+<h2>Land Logistics List</h2>
+<table class="table table-striped"  style="width:1200px; margin-left: -50px;">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Bodega</th>
+            <th>Tipo de Producto</th>
+            <th>Candidad producto</th>
+            <th>Precio de envío</th>
+            <th>Descuento</th>
+            <th>Vehículo</th>
+            <th>Guía</th>
+            <th>Fecha Registro</th>
+            <th>Fecha Entrega</th>
+            <th style="width:190px;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let gl of ground_logistics">
+            <td><button (click)="verDetallesEnvio(gl.id)" type="button" class="btn btn-link">{{gl.id}}</button></td>
+            <td>{{gl.codigo_bodegaEntrega}}</td>
+            <td>{{gl.tipoProducto}}</td>
+            <td>{{gl.cantidadProducto}}</td>
+            <td>{{gl.precioEnvio}}</td>
+            <td>{{gl.descuento}}</td>
+            <td>{{gl.placaVehiculo}}</td>
+            <td>{{gl.numeroGuia}}</td>
+            <td>{{gl.fechaRegistro}}</td>
+            <td>{{gl.fechaEntrega}}</td>
+            <td>
+                <button (click)="actualizarEnvio(gl.id)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarEnvio(gl.id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+            </td>
+        </tr>        
+    </tbody>    
+</table>
+

@@ -1,3 +1,5 @@
+import { Groundlogistics } from "./groundlogistics";
+
 export class Customer {
     customer_id:number;
     name:string;
@@ -5,7 +7,8 @@ export class Customer {
     movil:string;
     address:string;
     password:string;
-
+    //groundLogistics: Groundlogistics[];
+    groundLogistics: Groundlogistics[];
     constructor() {
     }    
 }

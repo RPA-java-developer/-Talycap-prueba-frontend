@@ -1,0 +1,145 @@
+<div class="col-md-6 offset-md-1">
+    <h3 class="text-center">Register Ground Logistics</h3>
+    <form (ngSubmit)= "onSubmit()" #groundLogisticsForm = "ngForm"> 
+        <table style="width: 900px;">
+            <tr>
+                <td>
+                    <div>
+                        <label for="paises">Customer</label>
+                       <br/>
+                        <div class="input-group input-group-sm mb-3">
+                            <select [(ngModel)]="groundlogistics.customer_id" (change)="onSelect($event.target)" class="form-select mb-3" #customer_id = "ngModel">
+                                <option *ngFor="let comodin of  customers" [selected]="0" [value]="comodin.customer_id" >{{comodin.name}}</option>
+                            </select>
+                        </div>  
+                    </div>                       
+                </td>
+                <td>
+                    <div class="form-group"> 
+                        <label>Delivery Warehouse:</label>
+                        <input type="text" class="form-control" id="codigo_bodegaEntrega" 
+                        [(ngModel)] = "groundlogistics.codigo_bodegaEntrega"  name="codigo_bodegaEntrega"
+                        class="form-control"
+                        required
+                        minlength="2"
+                        maxlength="10"
+                        placeholder="Select the Delivery Warehouse"
+                        #codigo_bodegaEntrega = "ngModel">        
+                    </div>
+                </td>
+            </tr>
+          
+         <tr>
+            <td>
+                <div class="form-group"> 
+                    <label>Product Type:</label>
+                    <input type="text" class="form-control" id="tipoProducto" 
+                    [(ngModel)] = "groundlogistics.tipoProducto"  name="tipoProducto"
+                    class="form-control"
+                    required
+                    minlength="2"
+                    maxlength="10"
+                    placeholder="Type the Product Type"
+                    #tipoProducto = "ngModel">        
+                </div>                 
+            </td>
+            <td>
+                <div class="form-group"> 
+                    <label>Product Guantity:</label>
+                    <input type="text" class="form-control" id="cantidadProducto" 
+                    [(ngModel)] = "groundlogistics.cantidadProducto"  name="cantidadProducto"
+                    class="form-control"
+                    required
+                    minlength="1"
+                    maxlength="10"
+                    placeholder="Type the Product Guantity"
+                    #cantidadProducto = "ngModel">        
+                </div>                   
+            </td>
+         </tr>
+         <tr>
+            <td>
+                <div class="form-group"> 
+                    <label>Shipping Price:</label>
+                    <input type="text" class="form-control" id="precioEnvio" 
+                    [(ngModel)] = "groundlogistics.precioEnvio"  name="precioEnvio"
+                    class="form-control"
+                    required
+                    minlength="2"
+                    maxlength="10"
+                    placeholder="Type the Shipping Price"
+                    #precioEnvio = "ngModel">        
+                </div>                
+            </td>
+            <td>
+                <div class="form-group"> 
+                    <label>Discount:</label>
+                    <input type="text" class="form-control" id="descuento" 
+                    [(ngModel)] = "groundlogistics.descuento"  name="descuento"
+                    class="form-control"
+                    minlength="1"
+                    maxlength="10"
+                    placeholder="Type the Discount"
+                    #descuento = "ngModel" value="0" >        
+                </div>  
+            </td>
+         </tr>
+         <tr>
+            <td>
+                <div class="form-group"> 
+                    <label>Car Plate:</label>
+                    <input type="text" class="form-control" id="placaVehiculo" 
+                    [(ngModel)] = "groundlogistics.placaVehiculo"  name="placaVehiculo"
+                    class="form-control"
+                    required
+                    minlength="6"
+                    maxlength="10"
+                    placeholder="Type the Car Plate"
+                    #placaVehiculo = "ngModel">        
+                </div>                              
+            </td>
+            <td>
+                <div class="form-group"> 
+                    <label>Tracking Number:</label>
+                    <input type="text" class="form-control" id="numeroGuia" 
+                    [(ngModel)] = "groundlogistics.numeroGuia"  name="numeroGuia"
+                    class="form-control"
+                    required
+                    minlength="6"
+                    maxlength="10"
+                    placeholder="Type the Tracking Number"
+                    #numeroGuia = "ngModel">        
+                </div>                
+            </td>
+         </tr>
+         <tr>
+            <td>
+                <div class="form-group"> 
+                    <label>Registration Date:</label>
+                    <input type="text" class="form-control" id="fechaRegistro" 
+                    [(ngModel)] = "groundlogistics.fechaRegistro"  name="fechaRegistro"
+                    class="form-control"
+                    minlength="0"
+                    maxlength="20"
+                    placeholder="Type the Registration Date"
+                    #fechaRegistro = "ngModel">        
+                </div>                 
+            </td>
+            <td>
+                <div class="form-group"> 
+                    <label>Deliver Date:</label>
+                    <input type="text" class="form-control" id="fechaEntrega" 
+                    [(ngModel)] = "groundlogistics.fechaEntrega"  name="fechaEntrega"
+                    class="form-control"
+                    minlength="0"
+                    maxlength="20"
+                    placeholder="Type the Deliver Date"
+                    #fechaEntrega = "ngModel">        
+                </div>                 
+            </td>
+         </tr>   
+        </table>
+    <button class="btn btn-success" [disabled]="!groundLogisticsForm.form.valid">Save</button>
+    </form>   
+</div>
+

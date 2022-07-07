@@ -1,0 +1,37 @@
+<h3>Land Logistics Details</h3>
+<div>
+  <div>
+    <label><b>ID: </b>{{ ground_logistics.id}}</label>
+  </div>
+  <div>
+    <label><b>Bodega: </b>{{ ground_logistics.codigo_bodegaEntrega}}</label>
+  </div>  
+  <div>
+    <label><b>Tipo Producto: </b>{{ ground_logistics.tipoProducto}}</label>
+  </div>
+  <div>
+    <label><b>Cantidad de Producto: </b>{{ ground_logistics.cantidadProducto}}</label>
+  </div>  
+  <div>
+    <label><b>Precio de Envío: </b>{{ ground_logistics.precioEnvio}}</label>
+  </div>
+  <div>
+    <label><b>Descuento: </b>{{ ground_logistics.descuento}}</label>
+  </div>  
+  <div>
+    <label><b>Placa Vehiculo: </b>{{ ground_logistics.placaVehiculo}}</label>
+  </div>
+  <div>
+    <label><b>Número Guía: </b>{{ ground_logistics.numeroGuia}}</label>
+  </div>  
+  <div>
+    <label><b>Fecha Registro: </b>{{ ground_logistics.fechaRegistro}}</label>
+  </div>
+  <div>
+    <label><b>Fecha Entrega: </b>{{ ground_logistics.fechaEntrega}}</label>
+  </div>  
+  <div>
+    <label><b>Cliente ID: </b>{{ ground_logistics.customer_id}}</label>
+    <td><button (click)="verDetallesDelEmpleado(ground_logistics.customer_id)" type="button" class="btn btn-link">{{ground_logistics.customer_id}}</button></td>
+  </div>
+</div>

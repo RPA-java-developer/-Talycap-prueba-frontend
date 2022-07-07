@@ -1,5 +1,5 @@
 <h2>Customer List</h2>
-<table class="table table-striped">
+<table class="table table-striped" >
     <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -7,16 +7,18 @@
             <th>Email</th>
             <th>Movil</th>
             <th>Address</th>
-            <th>Acciones</th>
+            <th>Logistics</th>
+            <th  style="width:300px;">Acciones</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let customer of customers">
-            <td>{{customer.customer_id}}</td>
+            <td><button (click)="verDetallesDelEmpleado(customer.customer_id)" type="button" class="btn btn-link">{{customer.customer_id}}</button></td>
             <td>{{customer.name}}</td>
             <td>{{customer.email}}</td>
             <td>{{customer.movil}}</td>
             <td>{{customer.address}}</td>
+            <td><button (click)="actualizarEmpleado(customer.customer_id)" type="button" class="btn btn-link">xxx</button></td>
             <td>
                 <button (click)="actualizarEmpleado(customer.customer_id)" class="btn btn-info">Editar</button>
                 <button (click)="eliminarEmpleado(customer.customer_id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
